@@ -20,8 +20,8 @@ def index():
 
 @app.route('/login/', methods=['POST'])
 def login():
-	username = request.form.get('username')
-	password = request.form.get('password')
+	username = request.form.get('username', '')
+	password = request.form.get('password', '')
 	if username.strip() and password.strip():
 		cursor.execute("SELECT * FROM service.users WHERE login=%s AND password=%s", (str(username), str(password)))
 		records = list(cursor.fetchall())
