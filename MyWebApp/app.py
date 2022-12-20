@@ -33,7 +33,3 @@ def login():
 				password=records[0][3],
 			)
 	return render_template('login.html')
-
-
-if __name__ == '__main__':
-	app.run("localhost", port=5000, debug=True)
